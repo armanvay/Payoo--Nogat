@@ -33,10 +33,24 @@ document.getElementById("add-money-btn").addEventListener("click",
          const newhistory =document.createElement("div")
          //  2 new div inerhtml add korbo
          newhistory.innerHTML = `
-         <div class="Transaction-card p-5 bg-base-200"></div>
-         <p>Add money SuccessFull From ${bankAcconunt} accno no ${accno} at ${new Date()} </p>
+        
          
-         
+      <div class="flex items-center gap-4 w-11/12 mx-auto py-5 bg-white border shadow-2xl">
+      <div
+        class="w-12 h-12 rounded-full flex items-center justify-center"
+      >
+        <img
+          src="/payoo-resources/assets/opt-1.png"
+          alt="icon"
+          class="w-6 h-6"
+        />
+      </div>
+
+      <div>
+        <h3 class="font-medium">${bankAcconunt}</h3>
+        <p class="text-sm text-gray-500">${accno} at ${new Date()}</p>
+      </div>
+    </div>
          `;
 
         //  4 history taky append korbo new div ta ky 

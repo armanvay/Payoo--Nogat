@@ -75,19 +75,25 @@
       </p>
       <!-- All Button  -->
       <div class="buttons grid grid-cols-3 gap-3 pt-4">
-        <button onclick="showOnly('add-mony')" class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button
+          onclick="showOnly('add-mony')"
+          class="btn flex-col h-full py-4 btn-primary btn-soft"
+        >
           <img src="/payoo-resources/assets/opt-1.png" alt="" />
           <p>Add Money</p>
         </button>
-        <button onclick="showOnly('cushout')" class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button
+          onclick="showOnly('cushout')"
+          class="btn flex-col h-full py-4 btn-primary btn-soft"
+        >
           <img src="/payoo-resources/assets/opt-2.png" alt="" />
           <p>Cashout</p>
         </button>
-        <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button onclick="showOnly('send-money')" class="btn flex-col h-full py-4 btn-primary btn-soft">
           <img src="/payoo-resources/assets/opt-3.png" alt="" />
           <p>Send Money</p>
         </button>
-        <button class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button  onclick="showOnly('bonus')" class="btn flex-col h-full py-4 btn-primary btn-soft">
           <img src="/payoo-resources/assets/opt-4.png" alt="" />
           <p>Get Bonus</p>
         </button>
@@ -95,7 +101,10 @@
           <img src="/payoo-resources/assets/opt-5.png" alt="" />
           <p>Pay Bill</p>
         </button>
-        <button onclick="showOnly('history')" class="btn flex-col h-full py-4 btn-primary btn-soft">
+        <button
+          onclick="showOnly('history')"
+          class="btn flex-col h-full py-4 btn-primary btn-soft"
+        >
           <img src="/payoo-resources/assets/opt-6.png" alt="" />
           <p>Transactions</p>
         </button>
@@ -103,20 +112,23 @@
     </section>
 
     <!-- add money  -->
-    <section id="add-mony" class="w-11/12 mx-auto py-5">
+    <section id="add-mony" class="w-11/12 mx-auto py-5 hidden">
       <h2 class="font-bold text-xl mb-5">Add money</h2>
       <div class="card bg-base-100 w-full shadow-2xl">
         <div class="card-body">
           <fieldset class="fieldset">
             <!-- 1  -->
-             <label class="font-bold text-[16px]">Select Bank</label>
-            <select id="add-mony-bank" class="select select-warning rounded-full w-full bg-base-200">
-              <option disabled selected >Select A Bank</option>
+            <label class="font-bold text-[16px]">Select Bank</label>
+            <select
+              id="add-mony-bank"
+              class="select select-warning rounded-full w-full bg-base-200"
+            >
+              <option disabled selected>Select A Bank</option>
               <option value="Sonali Bank">Sonali Bank</option>
               <option value="Asiya Bank">Asiya Bank</option>
               <option value="City Bank">City Bank</option>
             </select>
-            <br>
+            <br />
             <!-- 2  -->
             <label class="font-bold text-[16px]">Bank Account Number</label>
             <input
@@ -126,7 +138,6 @@
               type="text"
               class="input rounded-full w-full bg-base-200"
               placeholder="Enter 11 digit account number"
-            
             />
             <!-- 3  -->
             <label class="font-bold text-[16px]">Amount To Add</label>
@@ -147,7 +158,10 @@
             />
 
             <!-- 5  -->
-            <button id="add-money-btn" class="btn btn-primary mt-4 rounded-full">
+            <button
+              id="add-money-btn"
+              class="btn btn-primary mt-4 rounded-full"
+            >
               Add Money
             </button>
           </fieldset>
@@ -157,7 +171,7 @@
 
     <!-- cashout  -->
 
-    <section id="cushout" class="w-11/12 mx-auto py-5 hidden ">
+    <section id="cushout" class="w-11/12 mx-auto py-5 hidden">
       <h2 class="font-bold text-xl mb-5">Cushout</h2>
       <div class="card bg-base-100 w-full shadow-2xl">
         <div class="card-body">
@@ -200,17 +214,163 @@
       </div>
     </section>
 
-
     <!-- Transactions section  -->
-     <section id="history" class="w-11/12 mx-auto py-5 hidden ">
-        <h2 class="font-bold text-xl mb-5">Transaction History</h2>
-        <div class="space-y-5" id="history-conteiner">
-         
+    <section id="history" class="w-11/12 mx-auto py-5 hidden">
+      <h2 class="font-bold text-xl mb-5">Transaction History</h2>
+      <div class="space-y-5" id="history-conteiner"></div>
+    </section>
 
-     </section>
-    
+
+     <!-- send money section  -->
+     <section id="send-money" class="w-11/12 mx-auto py-5 hidden">
+      <h2 class="font-bold text-xl mb-5">Send Money</h2>
+      <div class="card bg-base-100 w-full shadow-2xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <!-- 1  -->
+            <label class="font-bold text-[16px]">User Account Number</label>
+            <input
+              id="send-number"
+              maxlength="11"
+              minlength="11"
+              type="text"
+              class="input rounded-full w-full bg-base-200"
+              placeholder="Enter Agent 11 Digit Number"
+             
+            />
+            <!-- 2  -->
+            <label class="font-bold text-[16px]">Amount</label>
+            <input
+              id="send-amount"
+              type="number"
+              class="input rounded-full w-full bg-base-200"
+              placeholder="Enter amount to transfer"
+            />
+            <!-- 3  -->
+            <label class="font-bold text-[16px]">Pin Number</label>
+            <input
+              id="send-pin"
+              maxlength="4"
+              type="password"
+              class="input rounded-full w-full bg-base-200"
+              placeholder="Enter Your 4 Digit Pin and type 1 2 3 4"
+            />
+
+            <!-- 4  -->
+            <button id="send-btn" class="btn btn-primary mt-4 rounded-full">
+              Send Now
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- bonas section -->
+          <section id="bonus" class="w-11/12 mx-auto py-5 hidden ">
+      <h2 class="font-bold text-xl mb-5">Get Bonus</h2>
+      <div class="card bg-base-100 w-full shadow-2xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+         <!-- 2  -->
+            <label class="font-bold text-[16px]">Enter Bonus Coupon</label>
+            <input
+              id="bonus-amount"
+              type="text"
+              class="input rounded-full w-full bg-base-200"
+              placeholder="Enter your coupon is 093845903"
+            />
+
+            <button id="bonus-btn" class="btn btn-primary mt-4 rounded-full">
+              Get Bonus 1000 
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+<!-- Pay Bill -->
+     <section id="pay-mony" class="w-11/12 mx-auto py-5 ">
+      <h2 class="font-bold text-xl mb-5">Pay Bill</h2>
+      <div class="card bg-base-100 w-full shadow-2xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <!-- 1  -->
+            <label class="font-bold text-[16px]">Select To Pay</label>
+            <select
+              id="pay-bank"
+              class="select select-warning rounded-full w-full bg-base-200"
+            >
+              <option disabled selected>Select back</option>
+              <option value="Sonali Bank">Sonali Bank</option>
+              <option value="Asiya Bank">Asiya Bank</option>
+              <option value="City Bank">City Bank</option>
+            </select>
+            <br />
+            <!-- 2  -->
+            <label class="font-bold text-[16px]">Biller Account Number</label>
+            <input
+              id="biller-number"
+              maxlength="11"
+              minlength="11"
+              type="text"
+              class="input rounded-full w-full bg-base-200"
+              placeholder="Enter account number"
+            />
+            <!-- 3  -->
+            <label class="font-bold text-[16px]">Amount to Pay</label>
+            <input
+              id="amount-pay"
+              type="number"
+              class="input rounded-full w-full bg-base-200"
+              placeholder="Add Amount to pay"
+            />
+            <!-- 4  -->
+            <label class="font-bold text-[16px]">Pin Number</label>
+            <input
+              id="pay-pin"
+              maxlength="4"
+              type="password"
+              class="input rounded-full w-full bg-base-200"
+              placeholder="Enter Your 4 Digit Pin and type 1 2 3 4"
+            />
+
+            <!-- 5  -->
+            <button
+              id="pay-btn"
+              class="btn btn-primary mt-4 rounded-full"
+            >
+              Add Money
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- new -->
+<section class="w-11/12 mx-auto hidden">
+     <span class="text-rotate text-7xl leading-[2] mt-3 w-">
+  <span class="justify-items-center">
+    <span >📐Welcome</span>
+    <span>⌨️ To</span>
+    <span>🌎 Payoo</span>
+    <span>🌱 Digital</span>
+    <span>🔧 Website</span>
+    <span>♻️ Thanks</span>
+  </span>
+</span>
+</section>
+
+
+
+
     <script src="masin.js"></script>
     <script src="cashout.js"></script>
     <script src="addMoney.js"></script>
+    <script src="send.js"></script>
+    <script src="bonus.js"></script>
   </body>
 </html>

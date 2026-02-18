@@ -25,6 +25,8 @@ function showOnly(id) {
   const addmoney = document.getElementById("add-mony");
   const cashout = document.getElementById("cushout");
   const history = document.getElementById("history");
+  const sendoMoney = document.getElementById("send-money");
+  const bonus = document.getElementById("bonus");
 
 
 
@@ -34,6 +36,8 @@ function showOnly(id) {
 
   cashout.classList.add("hidden");
   history.classList.add("hidden");
+  sendoMoney.classList.add("hidden");
+  bonus.classList.add("hidden");
 
   //id ola ky show koro
   const select = document.getElementById(id);
