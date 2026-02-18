@@ -32,11 +32,25 @@ document.getElementById("cashout-btn").addEventListener("click",
     const pin=cashoutPinInput.value ;
     
     if(pin =="1234"){
-        // 5-1 true : show an alert > set balance
-        alert("complet cushout")
-          console.log("new balance", newBalance);
-          balanceElenent.innerText=newBalance
-        
+      // 5-1 true : show an alert > set balance
+      alert("complet cushout");
+      console.log("new balance", newBalance);
+      balanceElenent.innerText = newBalance;
+      // 1 history-conteiner dora niya asbo
+
+      const history = document.getElementById("history-conteiner");
+      //  2 new div create korbo
+      const newhistory = document.createElement("div");
+      //  2 new div inerhtml add korbo
+      newhistory.innerHTML = `
+         <div class="Transaction-card p-5 bg-base-200"></div>
+         <p>cashout ${cashoutAmount} Taka SuccessFull to${cashoutNumber} at ${new Date()} </p>
+         
+         
+         `;
+
+      //  4 history taky append korbo new div ta ky
+      history.append(newhistory);
     }
     else{
         // 5-1 falas : show an error alert> return

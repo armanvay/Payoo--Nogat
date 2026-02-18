@@ -24,11 +24,16 @@ function setBalance(value) {
 function showOnly(id) {
   const addmoney = document.getElementById("add-mony");
   const cashout = document.getElementById("cushout");
+  const history = document.getElementById("history");
+
+
+
 
   //sobay ky hide kora dew
   addmoney.classList.add("hidden");
 
   cashout.classList.add("hidden");
+  history.classList.add("hidden");
 
   //id ola ky show koro
   const select = document.getElementById(id);
